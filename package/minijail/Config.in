@@ -1,0 +1,11 @@
+config BR2_PACKAGE_MINIJAIL
+	bool "minijail"
+	depends on BR2_arm || BR2_aarch64 || BR2_i386 || BR2_riscv || BR2_x86_64
+	select BR2_PACKAGE_LIBCAP
+	select BR2_PACKAGE_LINUX_HEADERS
+	help
+	  Minijail is a sandboxing and containment tool used in Chrome OS and Android.
+	  It provides an executable that can be used to launch and sandbox other programs,
+	  and a library that can be used by code to sandbox itself.
+
+	  https://google.github.io/minijail/
