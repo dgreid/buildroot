@@ -121,7 +121,6 @@ define $(2)_BUILD_CMDS
 			--offline \
 			$$(if $$(BR2_ENABLE_DEBUG),,--release) \
 			--manifest-path Cargo.toml \
-			--locked \
 			$$($(2)_CARGO_BUILD_OPTS)
 endef
 else # ifeq ($(4),target)
@@ -136,7 +135,6 @@ define $(2)_BUILD_CMDS
 			--offline \
 			--release \
 			--manifest-path Cargo.toml \
-			--locked \
 			$$($(2)_CARGO_BUILD_OPTS)
 endef
 endif # ifeq ($(4),target)
@@ -159,7 +157,6 @@ define $(2)_INSTALL_TARGET_CMDS
 			--bins \
 			--path ./ \
 			--force \
-			--locked \
 			-Z target-applies-to-host \
 			$$($(2)_CARGO_INSTALL_OPTS)
 endef
@@ -179,7 +176,6 @@ define $(2)_INSTALL_CMDS
 			--bins \
 			--path ./ \
 			--force \
-			--locked \
 			$$($(2)_CARGO_INSTALL_OPTS)
 endef
 endif
