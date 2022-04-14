@@ -1,0 +1,10 @@
+config BR2_PACKAGE_CROSVM
+    bool "crosvm"
+    depends on BR2_PACKAGE_HOST_RUSTC_TARGET_ARCH_SUPPORTS
+    select BR2_PACKAGE_HOST_RUSTC
+    select BR2_PACKAGE_HOST_PKGCONF
+    select BR2_PACKAGE_LIBCAP
+    help
+      This is a comment that explains what crosvm is.
+
+      https://chromium.googlesource.com/chromiumos/platform/crosvm/
